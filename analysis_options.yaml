@@ -1,0 +1,20 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - lib/src/**.g.dart
+  errors:
+    invalid_use_of_visible_for_testing_member: error
+    require_trailing_commas: warning
+linter:
+  rules:
+    flutter_style_todos: true
+    public_member_api_docs: false
+    missing_whitespace_between_adjacent_strings: false
+    sort_pub_dependencies: false
+    one_member_abstracts: false
+    avoid_escaping_inner_quotes: false
+    omit_local_variable_types: false
+dart_code_metrics:
+  extends:
+    - recommended
