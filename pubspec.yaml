@@ -21,4 +21,5 @@ dev_dependencies:
 flutter:
   shaders:
     - shaders/checkerboard.frag
+    - shaders/pixel_flicker.frag
   uses-material-design: true

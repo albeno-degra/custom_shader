@@ -10,4 +10,8 @@
       80
     ]
   },
+  "files.associations": {
+    "*.frag": "glsl",
+    "*.vert": "glsl"
+  }
 }

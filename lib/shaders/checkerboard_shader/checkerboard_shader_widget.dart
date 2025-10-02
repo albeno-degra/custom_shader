@@ -1,6 +1,6 @@
 import 'dart:ui' as ui;
 
-import 'package:custom_shader/checkerboard_shader/shader_cache.dart';
+import 'package:custom_shader/shaders/shader_cache.dart';
 import 'package:flutter/material.dart';
 
 const kAlpha = 255;
