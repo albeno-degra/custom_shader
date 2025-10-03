@@ -1,5 +1,6 @@
 import 'dart:ui' as ui;
 
+import 'package:custom_shader/features/photo_shimmer.dart/widgets/photo_shimmer.dart';
 import 'package:custom_shader/shaders/golden_shine_shader/golden_shine_shader_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -19,6 +20,11 @@ void main() {
           body: Center(
             child: GoldenShineShaderWidget(
               program: program,
+              animationSpeed: 200,
+              goldenShineShaderParams: const GoldenShineShaderParams(
+                minRadius: 0.2,
+                maxRadius: 0.3,
+              ),
               child: Container(
                 width: 300,
                 height: 300,
