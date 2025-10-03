@@ -29,10 +29,10 @@ void main() {
         ),
       ),
     );
-    await tester.pump(Duration.zero);
+    await tester.pump(const Duration(milliseconds: 300));
     await expectLater(
       find.byType(GoldenShineShaderWidget),
-      matchesGoldenFile('golden_shine_test.golden.png'),
+      matchesGoldenFile('golden_shine_300_test.golden.png'),
     );
   });
 }
