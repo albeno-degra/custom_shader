@@ -24,13 +24,12 @@ class FlickBoxesShaderWidget extends StatefulWidget {
 
 class _FlickBoxesShaderWidgetState extends State<FlickBoxesShaderWidget>
     with SingleTickerProviderStateMixin {
-  late Future<ui.FragmentProgram> _program;
+  final Future<ui.FragmentProgram> _program = ShaderCache.stainsProgram;
   late final AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
-    loadMyShader();
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 10),
@@ -41,10 +40,6 @@ class _FlickBoxesShaderWidgetState extends State<FlickBoxesShaderWidget>
   void dispose() {
     _controller.dispose();
     super.dispose();
-  }
-
-  Future<void> loadMyShader() async {
-    _program = ShaderCache.stainsProgram;
   }
 
   @override

@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 import 'dart:ui' as ui;
 
@@ -12,6 +13,7 @@ class GoldenShineShaderWidget extends StatefulWidget {
     this.brownColor = const ui.Color(0xFF695A10),
     this.animationSpeed = 100,
     this.goldenShineShaderParams = const GoldenShineShaderParams(),
+    this.program,
     super.key,
   });
   final Widget child;
@@ -19,6 +21,7 @@ class GoldenShineShaderWidget extends StatefulWidget {
   final Color yellowColor;
   final Color brownColor;
   final GoldenShineShaderParams goldenShineShaderParams;
+  final Future<ui.FragmentProgram>? program;
 
   @override
   State<GoldenShineShaderWidget> createState() =>
@@ -27,7 +30,7 @@ class GoldenShineShaderWidget extends StatefulWidget {
 
 class _GoldenShineShaderWidgetState extends State<GoldenShineShaderWidget>
     with SingleTickerProviderStateMixin {
-  late Future<ui.FragmentProgram> _program;
+  late final Future<ui.FragmentProgram> _program;
   late final AnimationController _controller;
   late final ui.FragmentShader shader;
   late final double randomDouble;
@@ -35,8 +38,11 @@ class _GoldenShineShaderWidgetState extends State<GoldenShineShaderWidget>
   @override
   void initState() {
     super.initState();
-    loadMyShader();
-    randomDouble = Random().nextDouble();
+    _program = widget.program ?? ShaderCache.goldenShineProgram;
+
+    final isFromTestEnv = Platform.environment.containsKey('FLUTTER_TEST');
+    randomDouble = isFromTestEnv ? 1 : Random().nextDouble();
+
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 100),
@@ -47,10 +53,6 @@ class _GoldenShineShaderWidgetState extends State<GoldenShineShaderWidget>
   void dispose() {
     _controller.dispose();
     super.dispose();
-  }
-
-  Future<void> loadMyShader() async {
-    _program = ShaderCache.goldenShineProgram;
   }
 
   @override
