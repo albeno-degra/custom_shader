@@ -10,7 +10,7 @@ class GoldenShineShaderWidget extends StatefulWidget {
     required this.child,
     this.yellowColor = const ui.Color(0xFFF5DD00),
     this.brownColor = const ui.Color(0xFF695A10),
-    this.animationSpeed = 1,
+    this.animationSpeed = 100,
     this.goldenShineShaderParams = const GoldenShineShaderParams(),
     super.key,
   });
@@ -39,7 +39,7 @@ class _GoldenShineShaderWidgetState extends State<GoldenShineShaderWidget>
     randomDouble = Random().nextDouble();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(seconds: 100),
     )..repeat(reverse: true);
   }
 
