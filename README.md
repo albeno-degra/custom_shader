@@ -10,3 +10,6 @@ The shader paints a dynamic checkerboard background (light and dark squares) to 
 - Lightweight and GPU-accelerated.
 
 Perfect for experimenting with Flutter’s shader API and understanding how to blend rendering logic with UI.
+
+## Golden shine shader
+The Golden shine shader is in .gitignore, so you need to add your own implementation. Good luck!

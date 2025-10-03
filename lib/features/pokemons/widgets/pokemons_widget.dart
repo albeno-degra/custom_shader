@@ -39,8 +39,9 @@ class _PokemonsWidgetState extends State<PokemonsWidget>
       itemCount: 12,
       itemBuilder: (context, index) {
         return PhotoShimmer(
-          imageUrl:
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${(index + 1) * 3}.png',
+          image: NetworkImage(
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${(index + 1) * 3}.png',
+          ),
           size: const Size(100, 100),
         );
       },

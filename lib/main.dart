@@ -1,11 +1,16 @@
-import 'package:custom_shader/features/pokemons/widgets/pokemons_widget.dart';
+import 'package:custom_shader/features/golden_shine/widgets/golden_shine_widget.dart';
 import 'package:flutter/material.dart';
+
+const Color tan = Color(0xFFD2B48C);
 
 void main() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(backgroundColor: Colors.white, body: PokemonsWidget()),
+      home: Scaffold(
+        backgroundColor: tan,
+        body: GoldenShineWidget(),
+      ),
     ),
   );
 }

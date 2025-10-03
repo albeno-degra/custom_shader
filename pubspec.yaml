@@ -22,4 +22,5 @@ flutter:
   shaders:
     - shaders/checkerboard.frag
     - shaders/pixel_flicker.frag
+    - shaders/golden_shine.frag
   uses-material-design: true
